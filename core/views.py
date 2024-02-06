@@ -14,3 +14,9 @@ def add(request):
     else:
         form = CompanyForms()
     return render(request,'add.html',{'form':form})
+
+
+def delete(request, id):
+    delete_post = Company.objects.get(id=id)
+    delete_post.delete()
+    return redirect('home')

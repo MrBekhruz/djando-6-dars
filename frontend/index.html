@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
@@ -17,6 +18,7 @@
             <th scope="col">Name</th>
             <th scope="col">About</th>
             <th scope="col">Logo</th>
+            <th scope="col">Delete</th>
           </tr>
         </thead>
         {% for posts in post %}
@@ -26,6 +28,11 @@
             <td>{{posts.name}}</td>
             <td>{{posts.about}}</td>
             <td><img src="{{posts.logo}}" height="255px" width="500px" alt=""></td>
+            <td>
+                <a href="/delete/{{posts.id}}">
+                <i class="fa fa-trash-o" style="size: 18px; color: red;"></i>
+            </a>
+            </td>
           </tr>
           
           {% endfor %}
